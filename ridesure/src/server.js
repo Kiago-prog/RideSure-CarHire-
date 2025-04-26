@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 4000;
+const PORT = 3000;
 
 const cars =  [
     {id: 1, brand: "Toyota", model: "Corolla", year: 2020, type:"Sedan"},
