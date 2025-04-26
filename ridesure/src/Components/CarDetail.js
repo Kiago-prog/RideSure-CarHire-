@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import BookingForm from './BookingForm';
+import BookingForm from '../Pages/BookingForm';
 
 const CarDetail = ({ cars }) => {
   const { id } = useParams();

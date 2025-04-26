@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import CarDetail from './Components/CarDetail';
 
+
 const cars = [
   {
     id: 1,
@@ -34,6 +35,7 @@ function App() {
         <Route path="/car/:id" element={<CarDetail cars={cars} />} />
       </Routes>
     </Router>
+    
   );
 }
 
