@@ -1,46 +1,65 @@
+// src/pages/BookingForm.jsx
 import React from "react";
 
 const BookingForm = () => {
   return (
-    <div className="booking-form-page">
-      <h2>Car Booking Form</h2>
-      <form className="book-car-form">
-        <div className="form-group">
-          <label>Pickup Location</label>
-          <input type="text" placeholder="Enter pickup location" />
-        </div>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg">
+        <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">Book Your Ride</h2>
+        
+        <form className="space-y-6">
+          <div>
+            <label className="block mb-2 font-semibold text-gray-700">Pickup Location</label>
+            <input 
+              type="text" 
+              placeholder="Enter pickup location"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            />
+          </div>
 
-        <div className="form-group">
-          <label>Drop-off Location</label>
-          <input type="text" placeholder="Enter drop-off location" />
-        </div>
+          <div>
+            <label className="block mb-2 font-semibold text-gray-700">Drop-off Location</label>
+            <input 
+              type="text" 
+              placeholder="Enter drop-off location"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            />
+          </div>
 
-        <div className="form-group">
-          <label>Pickup Date</label>
-          <input type="date" />
-        </div>
+          <div className="flex gap-4">
+            <div className="w-1/2">
+              <label className="block mb-2 font-semibold text-gray-700">Pickup Date</label>
+              <input 
+                type="date"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
 
-        <div className="form-group">
-          <label>Return Date</label>
-          <input type="date" />
-        </div>
+            <div className="w-1/2">
+              <label className="block mb-2 font-semibold text-gray-700">Return Date</label>
+              <input 
+                type="date"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+          </div>
 
-        <div className="form-group">
-          <label>Car Type</label>
-          <select>
-            <option value="">Select car type</option>
-            <option value="sedan">Sedan</option>
-            <option value="suv">SUV</option>
-            <option value="van">Van</option>
-            <option value="luxury">Luxury</option>
-          </select>
-        </div>
+          <div>
+            <label className="block mb-2 font-semibold text-gray-700">Special Requests</label>
+            <textarea 
+              placeholder="Any special requests?"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            ></textarea>
+          </div>
 
-        <div className="form-group">
-          <label>Special Requests</label>
-          <textarea placeholder="Any special requests?"></textarea>
-        </div>
-      </form>
+          <button 
+            type="submit" 
+            className="w-full bg-blue-600 hover:bg-blue-700 transition text-white font-bold py-3 rounded-lg"
+          >
+            Submit Booking
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
