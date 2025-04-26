@@ -1,73 +1,79 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const SearchForm = () => {
-    const [formData, setFormData] = useState({
-      pickupLocation: '',
-      dropoffLocation: '',
-      pickupDate: '',
-      dropoffDate: '',
+function BookingForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    carId: "",
+    date: "",
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("Booking submitted:", formData);
+    alert(`Booking submitted for ${formData.name}!`);
+    // Reset the form
+    setFormData({
+      name: "",
+      carId: "",
+      date: "",
     });
-  
-    const handleChange = (e) => {
-      setFormData({...formData, [e.target.name]: e.target.value});
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log('Searching cars with:', formData);
-      // You can later pass this data to filter available cars
-    };
-  
-    return (
-      <form className="search-form" onSubmit={handleSubmit}>
-        <h2>Search for a Car</h2>
-        <div className="form-group">
-          <label>Pick-up Location</label>
-          <input 
-            type="text" 
-            name="pickupLocation" 
-            value={formData.pickupLocation}
-            onChange={handleChange}
-            required
-          />
+  }
+
+  return (
+    <div>
+      <h2>Book a Car</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            Your Name:
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </label>
         </div>
-  
-        <div className="form-group">
-          <label>Drop-off Location</label>
-          <input 
-            type="text" 
-            name="dropoffLocation" 
-            value={formData.dropoffLocation}
-            onChange={handleChange}
-            required
-          />
+
+        <div>
+          <label>
+            Car ID:
+            <input
+              type="number"
+              name="carId"
+              value={formData.carId}
+              onChange={handleChange}
+              required
+            />
+          </label>
         </div>
-  
-        <div className="form-group">
-          <label>Pick-up Date</label>
-          <input 
-            type="date" 
-            name="pickupDate" 
-            value={formData.pickupDate}
-            onChange={handleChange}
-            required
-          />
+
+        <div>
+          <label>
+            Booking Date:
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
+          </label>
         </div>
-  
-        <div className="form-group">
-          <label>Drop-off Date</label>
-          <input 
-            type="date" 
-            name="dropoffDate" 
-            value={formData.dropoffDate}
-            onChange={handleChange}
-            required
-          />
-        </div>
-  
-        <button type="submit">Search Cars</button>
+
+        <button type="submit">Submit Booking</button>
       </form>
-    );
-  };
-  
-  export default SearchForm;
+    </div>
+  );
+}
+
+export default BookingForm;
