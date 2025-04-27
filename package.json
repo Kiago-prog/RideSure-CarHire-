@@ -19,7 +19,11 @@
   "homepage": "https://github.com/Alicia-Natasha/RideSure-CarHire-#readme",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.0",
     "tailwindcss": "^4.1.4"
   }
 }

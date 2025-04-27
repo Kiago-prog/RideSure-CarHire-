@@ -6,6 +6,7 @@ import CarList from './Components/CarList';
 import { Routes, Route } from 'react-router-dom';
 import LogIn from './Pages/LoginPage';
 import SignUp from './Pages/SignupPage';
+import Contacts from './Pages/ContactUs';
 
 
 function App() {
@@ -18,10 +19,12 @@ return(
         <Route path="/search" element={<SearchForm />} />
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Contacts" element={<Contacts />} />
         
       </Routes>
   </div>
 );
 }
+
 
 export default App;

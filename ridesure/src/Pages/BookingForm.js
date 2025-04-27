@@ -1,4 +1,3 @@
-// src/pages/BookingForm.jsx
 import React from "react";
 
 const BookingForm = () => {
