@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Alicia-Natasha/RideSure-CarHire-#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "@tailwindcss/vite": "^4.1.4",
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.4"
   }
 }
