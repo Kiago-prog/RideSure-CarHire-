@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Navbar =()=>{
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">CarHire</div>
-         <ul className="navbar-links">
-                <li><Link to= "/">Home</Link></li>
-                <li><Link to= "/cars">Browse Cars</Link></li>
-                <li><Link to= "/bookings">Booking a Car</Link></li>
-                <li><Link to= "/contacts">Contact Us</Link></li>
+    <nav className="bg-blue-600 p-4 flex justify-between items-center">
+      <div className="text-white text-2xl font-bold">CarHire</div>
+         <ul className="flex space-x-6">
+                <li><Link to= "/" className="text-white hover:text-gray-300">Home</Link></li>
+                <li><Link to= "/cars" className="text-white hover:text-gray-300">Browse Cars</Link></li>
+                <li><Link to= "/bookings" className="text-white hover:text-gray-300">Booking a Car</Link></li>
+                <li><Link to= "/contacts" className="text-white hover:text-gray-300">Contact Us</Link></li>
             </ul>
-        <div className="navbar-auth">
-            <button className="btn login">Login</button>
-            <button className="btn signup">Sign Up</button>
+        <div className="space-x-4">
+            <button className="bg-white text-blue-600 font-semibold py-1 px-4 rounded hover:bg-gray-200">Login</button>
+            <button className="bg-white text-blue-600 font-semibold py-1 px-4 rounded hover:bg-gray-200">Sign Up</button>
         </div>
     </nav>
   );
