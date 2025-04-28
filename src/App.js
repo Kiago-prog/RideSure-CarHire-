@@ -4,7 +4,9 @@ import HomeScreen from './Components/HomeScreen';
 import CarList from './Components/CarList';
 import BookingConfirmation from './Components/BookingConfirmation';
 import Navbar from './Components/Navbar';
-import HomePage from './Components/Home'
+import HomePage from './Components/Home';
+import LogIn from './Components/LoginPage'
+import SignUp from './Components/SignupPage'
 
 const App = () => {
   const [searchCriteria, setSearchCriteria] = useState(null);
@@ -29,9 +31,9 @@ const App = () => {
       <Route path="/" element={<HomePage onSearch={handleSearch} />} />
       <Route path="/bookCar" element={<HomeScreen onSearch={handleSearch} />} />
       <Route path="/vehicles" element={<CarList onSelect={handleCarSelect} />} />
-        <Route 
-          path="/confirmation" 
-          element={<BookingConfirmation bookingDetails={bookingDetails} 
+      <Route path="/LogIn" element={<LogIn onSelect={handleCarSelect} />} /> 
+      <Route path="/SignUp" element={<SignUp onSelect={handleCarSelect} />} />
+      <Route path="/confirmation" element={<BookingConfirmation bookingDetails={bookingDetails} 
                                           onModify={() => console.log("Modify invoked")}
                                           onCancel={() => console.log("Cancel invoked")}
                                           onConfirm={() => console.log("Confirm invoked")} />} 
