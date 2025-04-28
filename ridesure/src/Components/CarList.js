@@ -3,7 +3,7 @@ import React from "react";
 const cars = [
   { id: 1, brand: "Toyota", model: "Corolla", year: 2020, type: "Sedan" },
   { id: 2, brand: "Ford", model: "Ranger", year: 2022, type: "Truck" },
-  { id: 3, brand: "Honda", model: "Civic", year: 2021, type: "Sedan" },
+  { id: 3, brand: "Honda", model: "Civic", year: 2021, type: "Sedan", }
 ];
 
 function CarList() {
