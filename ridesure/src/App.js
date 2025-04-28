@@ -1,36 +1,38 @@
-// src/App.js
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import React, { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import HomeScreen from './Components/HomeScreen';
+import CarList from './Components/CarList';
+import BookingConfirmation from './Components/BookingConfirmation';
 
-// Components
-import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
-import LoginPage from "./Components/LoginPage";
-import CarList from "./Components/CarList";
-import CarDetail from "./Components/CarDetail";
+const App = () => {
+  const [searchCriteria, setSearchCriteria] = useState(null);
+  const [bookingDetails, setBookingDetails] = useState(null);
+  const navigate = useNavigate();
 
-function App() {
+  const handleSearch = (criteria) => {
+    setSearchCriteria(criteria);
+    navigate('/vehicles');
+  };
+
+  const handleCarSelect = (car) => {
+    // Combine car details with search criteria for booking summary
+    setBookingDetails({ ...car, ...searchCriteria });
+    navigate('/confirmation');
+  };
+
   return (
-    <div className="app-container">
-      <Navbar />
-      <main className="main-content">
-        <Routes>
-          {/* Home Route */}
-          <Route path="/" element={<Home />} />
-
-          {/* Login Page Route */}
-          <Route path="/login" element={<LoginPage />} />
-
-          {/* Car List Route */}
-          <Route path="/cars" element={<CarList />} />
-
-          {/* Car Details Route */}
-          <Route path="/cars/:id" element={<CarDetail />} />
-        </Routes>
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomeScreen onSearch={handleSearch} />} />
+      <Route path="/vehicles" element={<CarList onSelect={handleCarSelect} />} />
+      <Route 
+        path="/confirmation" 
+        element={<BookingConfirmation bookingDetails={bookingDetails} 
+                                         onModify={() => console.log("Modify invoked")}
+                                         onCancel={() => console.log("Cancel invoked")}
+                                         onConfirm={() => console.log("Confirm invoked")} />} 
+      />
+    </Routes>
   );
-}
+};
 
 export default App;
