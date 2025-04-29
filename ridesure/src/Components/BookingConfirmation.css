@@ -1,0 +1,50 @@
+.booking-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-details {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .vehicle-info {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .vehicle-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .booking-summary {
+    flex: 2;
+  }
+  
+  .booking-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .booking-actions button {
+    padding: 0.75rem 1.5rem;
+    background-color: #0d1b2a;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .booking-actions button:hover {
+    background-color: #1b263b;
+  }
+  
